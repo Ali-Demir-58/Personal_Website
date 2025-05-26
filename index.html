@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ali Demir - Kişisel Blog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav class="main-navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+    </nav>
+
+  <header class="profile-header">
+  <div class="profile-photo">
+    <img src="img\Ali-Demir.jpg" alt="Ali Demir">
+  </div>
+  <div class="profile-info">
+    <h1>Ali Demir</h1>
+    <p>Matematik Mühendisliği öğrencisi | Girişimcilik ve teknoloji tutkunu</p>
+    <a href="https://www.linkedin.com/in/alidemir58/" target="_blank" class="linkedin-button">LinkedIn Profilim</a>
+  </div>
+  </header>
+
+  <main class="blog-container" >
+    <!-- Blog kartları JavaScript ile buraya eklenecek -->
+  </main>
+
+  <footer>
+    <p>© 2025 Ali Demir. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- JavaScript dosyaları -->
+  <script src="data.js"></script>
+  <script>
+    const container = document.querySelector('.blog-container');
+
+    blogPosts.forEach(post => {
+      const card = document.createElement('article');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <img src="${post.image}" alt="${post.title}" />
+        <h2>${post.title}</h2>
+        <p>${post.excerpt}</p>
+        <a href="${post.link}">Devamını Oku →</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
